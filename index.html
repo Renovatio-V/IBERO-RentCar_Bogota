@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RentCar Bogotá — Tu carro te espera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080f; --bg2:#0d0d1a; --card:#12122www;
+  --card:rgba(255,255,255,.04);
+  --violet:#7c3aed; --cyan:#22d3ee; --pink:#f472b6;
+  --grad:linear-gradient(135deg,#7c3aed 0%,#22d3ee 100%);
+  --text:#f4f4f8; --muted:#9a9ab0;
+  --border:rgba(255,255,255,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+h1,h2,h3,.brand{font-family:'Sora',sans-serif}
+::selection{background:var(--violet);color:#fff}
+
+/* ---------- FONDO ANIMADO ---------- */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.aurora span{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;animation:drift 18s ease-in-out infinite alternate}
+.aurora span:nth-child(1){width:520px;height:520px;background:#7c3aed;top:-140px;left:-120px}
+.aurora span:nth-child(2){width:460px;height:460px;background:#0ea5e9;bottom:-160px;right:-100px;animation-delay:-6s}
+.aurora span:nth-child(3){width:340px;height:340px;background:#f472b6;top:40%;left:55%;opacity:.18;animation-delay:-12s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(90px,60px) scale(1.15)}}
+.grid-overlay{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%)}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;backdrop-filter:blur(18px);background:rgba(8,8,15,.6);border-bottom:1px solid var(--border);transition:.3s}
+.brand{font-size:1.35rem;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.brand .logo{width:38px;height:38px;border-radius:12px;background:var(--grad);display:grid;place-items:center;font-size:1.1rem;box-shadow:0 8px 24px rgba(124,58,237,.45)}
+.brand em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500;position:relative;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:100px;font-weight:600;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 30px rgba(124,58,237,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,211,238,.35)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px;padding:140px 6vw 60px;max-width:1400px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:rgba(255,255,255,.04);font-size:.82rem;color:var(--muted);margin-bottom:26px}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:#34d399;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}50%{box-shadow:0 0 0 8px rgba(52,211,153,0)}}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.4rem);font-weight:800;line-height:1.06;letter-spacing:-2px}
+.hero h1 .shine{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative}
+.hero p{color:var(--muted);font-size:1.1rem;line-height:1.75;max-width:520px;margin:26px 0 38px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-visual{position:relative;height:520px;display:grid;place-items:center}
+.orbit{position:absolute;inset:0;border:1px dashed rgba(255,255,255,.12);border-radius:50%;animation:spin 30s linear infinite}
+.orbit.o2{inset:60px;animation-duration:22s;animation-direction:reverse}
+.orbit.o3{inset:120px;animation-duration:16s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.car-core{width:230px;height:230px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-size:6.5rem;box-shadow:0 0 90px rgba(124,58,237,.55),inset 0 0 60px rgba(0,0,0,.25);animation:float 5s ease-in-out infinite;z-index:2}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+.sat{position:absolute;padding:12px 18px;border-radius:16px;background:rgba(18,18,32,.85);border:1px solid var(--border);backdrop-filter:blur(10px);font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 14px 34px rgba(0,0,0,.45);animation:float 6s ease-in-out infinite;white-space:nowrap;z-index:3}
+.sat .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1rem}
+.s1{top:8%;left:2%}.s2{top:22%;right:-2%;animation-delay:-2s}.s3{bottom:18%;left:-4%;animation-delay:-4s}.s4{bottom:4%;right:6%;animation-delay:-1s}
+
+/* ---------- MARQUEE ---------- */
+.marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;background:rgba(255,255,255,.02)}
+.marquee-track{display:flex;gap:60px;width:max-content;animation:scrollX 26s linear infinite}
+.marquee-track span{font-family:'Sora',sans-serif;font-size:1rem;color:var(--muted);display:flex;align-items:center;gap:60px;white-space:nowrap}
+.marquee-track b{color:#fff}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+
+/* ---------- SECCIONES ---------- */
+section{padding:100px 6vw;max-width:1400px;margin:0 auto}
+.sec-tag{color:var(--cyan);font-size:.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.sec-title{font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:800;letter-spacing:-1px;margin:12px 0 14px}
+.sec-sub{color:var(--muted);max-width:560px;line-height:1.7}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(42px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- STATS ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px}
+.stat{padding:34px 28px;border-radius:22px;background:var(--card);border:1px solid var(--border);transition:.35s;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.stat:hover{transform:translateY(-8px);border-color:rgba(124,58,237,.5)}
+.stat:hover::before{transform:scaleX(1)}
+.stat .num{font-family:'Sora',sans-serif;font-size:2.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{color:var(--muted);font-size:.9rem;margin-top:6px}
+
+/* ---------- FLOTA ---------- */
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin:36px 0}
+.chip{padding:10px 22px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.88rem;font-weight:600;cursor:pointer;transition:.25s;font-family:'Inter',sans-serif}
+.chip:hover{color:#fff;border-color:var(--cyan)}
+.chip.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(124,58,237,.35)}
+.fleet{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.car-card{border-radius:24px;background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,opacity .4s;cursor:pointer}
+.car-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.car-card.hide{display:none}
+.car-img{height:170px;display:grid;place-items:center;font-size:4.6rem;position:relative;overflow:hidden}
+.car-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.28),transparent 55%)}
+.car-img .tag{position:absolute;top:14px;left:14px;font-size:.72rem;font-weight:700;padding:6px 14px;border-radius:100px;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);z-index:2;letter-spacing:.5px}
+.car-body{padding:22px 24px 26px}
+.car-body h3{font-size:1.12rem;font-weight:700}
+.car-meta{display:flex;gap:14px;color:var(--muted);font-size:.82rem;margin:10px 0 16px;flex-wrap:wrap}
+.car-meta span{display:flex;align-items:center;gap:5px}
+.car-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:16px}
+.price{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:800}
+.price small{font-size:.75rem;color:var(--muted);font-weight:500;font-family:'Inter',sans-serif}
+.mini-btn{padding:9px 20px;border-radius:100px;background:rgba(124,58,237,.16);color:#c4b5fd;font-size:.84rem;font-weight:600;border:1px solid rgba(124,58,237,.4);cursor:pointer;transition:.25s;font-family:'Inter',sans-serif}
+.mini-btn:hover{background:var(--violet);color:#fff}
+
+/* ---------- CÓMO FUNCIONA ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.step{padding:40px 32px;border-radius:24px;background:var(--card);border:1px solid var(--border);position:relative;transition:.35s}
+.step:hover{transform:translateY(-8px);border-color:rgba(34,211,238,.45)}
+.step .n{font-family:'Sora',sans-serif;font-size:3.4rem;font-weight:800;position:absolute;top:18px;right:26px;color:rgba(255,255,255,.06)}
+.step .ico{width:60px;height:60px;border-radius:18px;background:var(--grad);display:grid;place-items:center;font-size:1.7rem;margin-bottom:22px;box-shadow:0 12px 28px rgba(124,58,237,.35)}
+.step h3{font-size:1.15rem;margin-bottom:12px}
+.step p{color:var(--muted);font-size:.92rem;line-height:1.7}
+
+/* ---------- CTA ---------- */
+.cta-banner{border-radius:32px;background:var(--grad);padding:70px 8%;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'🚗';position:absolute;font-size:11rem;opacity:.1;left:-30px;bottom:-40px;transform:rotate(-15deg)}
+.cta-banner::after{content:'🚙';position:absolute;font-size:9rem;opacity:.1;right:-20px;top:-30px;transform:rotate(12deg)}
+.cta-banner h2{font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;letter-spacing:-1px}
+.cta-banner p{margin:16px auto 34px;max-width:480px;color:rgba(255,255,255,.85)}
+.btn-white{background:#fff;color:#1e1b4b;box-shadow:0 14px 34px rgba(0,0,0,.25)}
+.btn-white:hover{transform:translateY(-3px) scale(1.03)}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--border);padding:50px 6vw 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:.86rem}
+.socials{display:flex;gap:12px}
+.socials a{width:40px;height:40px;border-radius:12px;border:1px solid var(--border);display:grid;place-items:center;text-decoration:none;transition:.25s;font-size:1rem}
+.socials a:hover{background:var(--grad);border-color:transparent;transform:translateY(-4px)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:120px;text-align:center}
+  .hero p{margin-inline:auto}
+  .hero-cta{justify-content:center}
+  .hero-visual{height:420px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:rgba(8,8,15,.97);padding:26px 6vw;gap:20px;border-bottom:1px solid var(--border)}
+}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.sat{font-size:.72rem;padding:9px 13px}}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<div class="aurora"><span></span><span></span><span></span></div>
+<div class="grid-overlay"></div>
+
+<nav id="nav">
+  <a class="brand" href="#"><span class="logo">🚗</span>Rent<em>Car</em>&nbsp;Bogotá</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#flota">Flota</a></li>
+    <li><a href="#como">Cómo funciona</a></li>
+    <li><a href="#stats">La empresa</a></li>
+    <li><a href="panel.html">Mi cuenta</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center">
+    <a href="panel.html" class="btn btn-primary">Iniciar sesión →</a>
+    <button class="hamburger" id="ham">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="badge"><span class="dot"></span> Disponible ahora en Bogotá</div>
+    <h1>Tu carro ideal,<br><span class="shine">a un clic</span> de distancia.</h1>
+    <p>Reserva, alquila y gestiona tu vehículo sin filas ni papeleo. La plataforma que centraliza la información de RentCar Bogotá en tiempo real, para clientes y equipo.</p>
+    <div class="hero-cta">
+      <a href="#flota" class="btn btn-primary">Explorar la flota 🚘</a>
+      <a href="#como" class="btn btn-ghost">Cómo funciona</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+    <div class="car-core">🚗</div>
+    <div class="sat s1"><span class="ico" style="background:rgba(52,211,153,.18)">✅</span> Reserva confirmada</div>
+    <div class="sat s2"><span class="ico" style="background:rgba(34,211,238,.18)">📍</span> Entrega en Chapinero</div>
+    <div class="sat s3"><span class="ico" style="background:rgba(244,114,182,.18)">💳</span> Pago seguro</div>
+    <div class="sat s4"><span class="ico" style="background:rgba(167,139,250,.18)">⭐</span> 4.9 / 5.0</div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>🚙 Más de <b>120 vehículos</b></span><span>⚡ Reserva en <b>menos de 2 minutos</b></span><span>📍 Cobertura en <b>toda Bogotá</b></span><span>🛡️ <b>Seguro incluido</b></span><span>💳 <b>Pagos 100% seguros</b></span><span>🕐 Atención <b>24/7</b></span>
+    <span>🚙 Más de <b>120 vehículos</b></span><span>⚡ Reserva en <b>menos de 2 minutos</b></span><span>📍 Cobertura en <b>toda Bogotá</b></span><span>🛡️ <b>Seguro incluido</b></span><span>💳 <b>Pagos 100% seguros</b></span><span>🕐 Atención <b>24/7</b></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section id="stats">
+  <span class="sec-tag reveal">RentCar Bogotá en números</span>
+  <h2 class="sec-title reveal">Confianza que se maneja sola</h2>
+  <p class="sec-sub reveal">Transformamos la gestión manual de alquileres en una plataforma digital segura, rápida y siempre disponible.</p>
+  <div class="stats">
+    <div class="stat reveal"><div class="num" data-count="120">0</div><div class="lbl">Vehículos en flota</div></div>
+    <div class="stat reveal"><div class="num" data-count="4800">0</div><div class="lbl">Reservas completadas</div></div>
+    <div class="stat reveal"><div class="num" data-count="98">0</div><div class="lbl">% de satisfacción</div></div>
+    <div class="stat reveal"><div class="num" data-count="24">0</div><div class="lbl">/7 soporte al cliente</div></div>
+  </div>
+</section>
+
+<!-- FLOTA -->
+<section id="flota">
+  <span class="sec-tag reveal">Nuestra flota</span>
+  <h2 class="sec-title reveal">Elige tu próximo viaje</h2>
+  <p class="sec-sub reveal">Desde urbanos económicos hasta SUVs familiares. Todos con mantenimiento al día y seguro incluido.</p>
+  <div class="filters reveal">
+    <button class="chip active" data-f="todos">Todos</button>
+    <button class="chip" data-f="urbano">Urbano</button>
+    <button class="chip" data-f="suv">SUV</button>
+    <button class="chip" data-f="deportivo">Deportivo</button>
+    <button class="chip" data-f="camioneta">Camioneta</button>
+  </div>
+  <div class="fleet" id="fleet"></div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como">
+  <span class="sec-tag reveal">Simple por diseño</span>
+  <h2 class="sec-title reveal">Reserva en 3 pasos</h2>
+  <div class="steps">
+    <div class="step reveal"><span class="n">01</span><div class="ico">🔎</div><h3>Consulta disponibilidad</h3><p>Explora la flota en tiempo real y filtra por fechas, tipo de vehículo y ubicación de entrega en Bogotá.</p></div>
+    <div class="step reveal"><span class="n">02</span><div class="ico">📅</div><h3>Reserva en línea</h3><p>Selecciona las fechas de alquiler y devolución, elige tu método de pago y confirma en segundos.</p></div>
+    <div class="step reveal"><span class="n">03</span><div class="ico">🚗</div><h3>Recoge y maneja</h3><p>Recibe tu vehículo en el punto acordado y disfruta del viaje. La devolución es igual de fácil.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="cta-banner reveal">
+    <h2>¿Listo para estrenar carro este fin de semana?</h2>
+    <p>Crea tu cuenta gratis y haz tu primera reserva hoy. Sin tarjetas de crédito ocultas ni letra pequeña.</p>
+    <a href="panel.html" class="btn btn-white">Crear mi cuenta →</a>
+  </div>
+</section>
+
+<footer>
+  <a class="brand" href="#" style="font-size:1.1rem"><span class="logo" style="width:32px;height:32px;font-size:.9rem">🚗</span>Rent<em>Car</em>&nbsp;Bogotá</a>
+  <div>© 2026 RentCar Bogotá · Sistema web de gestión y reservas · Bogotá D.C., Colombia</div>
+  <div class="socials"><a href="#">𝕏</a><a href="#">📷</a><a href="#">▶️</a></div>
+</footer>
+
+<script>
+/* ---- DATOS DE FLOTA ---- */
+const cars=[
+ {n:"Renault Kwid Zen",t:"urbano",e:"🚗",p:145000,d:"Manual · 5 puestos · Gasolina",g:"linear-gradient(135deg,#312e81,#7c3aed)",tag:"Económico"},
+ {n:"Chevrolet Spark GT",t:"urbano",e:"🚙",p:155000,d:"Manual · 5 puestos · Aire acondicionado",g:"linear-gradient(135deg,#0c4a6e,#22d3ee)",tag:"Popular"},
+ {n:"Mazda CX-30 Touring",t:"suv",e:"🚘",p:320000,d:"Automática · 5 puestos · Full equipo",g:"linear-gradient(135deg,#701a75,#f472b6)",tag:"Premium"},
+ {n:"Renault Duster Intens",t:"suv",e:"🛻",p:265000,d:"Mecánica · 5 puestos · Ideal para fuera de la ciudad",g:"linear-gradient(135deg,#064e3b,#34d399)",tag:"Aventura"},
+ {n:"Ford Mustang GT",t:"deportivo",e:"🏎️",p:890000,d:"Automática · V8 · 460 HP",g:"linear-gradient(135deg,#7f1d1d,#f97316)",tag:"Lujo"},
+ {n:"Toyota Hilux 2.8",t:"camioneta",e:"🛻",p:410000,d:"4x4 · Diésel · Carga y trabajo pesado",g:"linear-gradient(135deg,#1e3a8a,#60a5fa)",tag:"Trabajo"},
+];
+const fleet=document.getElementById('fleet');
+fleet.innerHTML=cars.map(c=>`
+ <div class="car-card reveal" data-t="${c.t}">
+   <div class="car-img" style="background:${c.g}"><span class="tag">${c.tag}</span>${c.e}</div>
+   <div class="car-body">
+     <h3>${c.n}</h3>
+     <div class="car-meta"><span>⚙️ ${c.d}</span></div>
+     <div class="car-foot">
+       <div class="price">$${c.p.toLocaleString('es-CO')} <small>/día</small></div>
+       <button class="mini-btn" onclick="location.href='panel.html'">Reservar</button>
+     </div>
+   </div>
+ </div>`).join('');
+
+/* ---- FILTROS ---- */
+document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
+  document.querySelector('.chip.active').classList.remove('active');
+  ch.classList.add('active');
+  const f=ch.dataset.f;
+  document.querySelectorAll('.car-card').forEach(c=>{
+    const show=f==='todos'||c.dataset.t===f;
+    c.classList.toggle('hide',!show);
+    if(show){c.style.opacity=0;requestAnimationFrame(()=>{c.style.opacity=1;c.style.transform='none'});}
+  });
+}));
+
+/* ---- REVEAL ON SCROLL ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---- CONTADORES ANIMADOS ---- */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,end=+el.dataset.count,t0=performance.now();
+  (function tick(t){const p=Math.min((t-t0)/1600,1),ease=1-Math.pow(1-p,3);
+    el.textContent=Math.round(end*ease).toLocaleString('es-CO');
+    if(p<1)requestAnimationFrame(tick)})(t0);
+  cio.unobserve(el);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ---- NAV MÓVIL ---- */
+document.getElementById('ham').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
+document.querySelectorAll('#navLinks a').forEach(a=>a.onclick=()=>document.getElementById('navLinks').classList.remove('open'));
+</script>
+</body>
+</html>
