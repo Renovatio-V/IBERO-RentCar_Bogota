@@ -33,6 +33,20 @@ El sistema incluirá las siguientes funcionalidades:
 - Gestión de usuarios.
 - Generación de reportes básicos.
 
+## Estructura del proyecto
+
+```text
+IBERO/
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── index.html
+└── README.md
+```
+
+Los estilos y la lógica de la página principal se mantienen en sus propias carpetas y se enlazan desde `index.html`.
+
 ## Información del proyecto
 
 | Dato | Descripción |
