@@ -32,6 +32,7 @@ El sistema incluirá las siguientes funcionalidades:
 - Registro de métodos de pago.
 - Gestión de usuarios.
 - Generación de reportes básicos.
+- Consultas de administrador.
 
 ## Estructura del proyecto
 
