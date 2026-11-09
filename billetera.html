@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENTCAR · Billetera</title>
+  <meta name="description" content="Administra tus métodos de pago y movimientos.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span>R</span><div>RENTCAR<small>BOGOTÁ</small></div></div>
+    <nav>
+      <a href="index.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v11h14V10M9 21v-7h6v7"></path></svg><span>Inicio</span></a>
+      <a href="explorar.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><span>Explorar</span></a>
+      <a href="viajes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg><span>Mis viajes</span></a>
+      <a href="billetera.html" class="active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h15v14H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13"></path><path d="M15 10h6v5h-6a2.5 2.5 0 0 1 0-5Z"></path></svg><span>Billetera</span></a>
+      <a href="perfil.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"></path></svg><span>Mi perfil</span></a>
+    </nav>
+    <div class="sidebar-help">
+      <span>24/7</span>
+      <b>¿Necesitas ayuda?</b>
+      <small>Estamos contigo en la vía.</small>
+      <button type="button">Contactar soporte</button>
+    </div>
+    <a class="side-profile" href="perfil.html">
+      <div class="avatar">CT</div>
+      <div><b>Camila Torres</b><small>Conductora Oro</small></div>
+      <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
+    </a>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="mobile-brand"><div class="brand"><span>R</span><div>RENTCAR<small>BOGOTÁ</small></div></div></div>
+      <div class="crumb">RENTCAR <span>/ BILLETERA</span></div>
+      <div class="top-actions">
+        <button class="icon-button" type="button" aria-label="Notificaciones"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg><i></i></button>
+        <a class="mini-profile" href="perfil.html"><span class="avatar">CT</span><b>Camila</b><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <header class="page-header">
+        <div>
+          <span class="overline">PAGOS SEGUROS</span>
+          <h1>Mi billetera</h1>
+          <p>Administra tus métodos de pago y movimientos.</p>
+        </div>
+        <button class="primary" type="button" id="add-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg> Agregar tarjeta</button>
+      </header>
+
+      <div class="wallet-grid">
+        <article class="credit-card">
+          <div class="card-brand"><span class="chip"></span><b>VISA</b></div>
+          <p>•••• •••• •••• 4242</p>
+          <div>
+            <span><small>TITULAR</small>CAMILA TORRES</span>
+            <span><small>VENCE</small>09/28</span>
+          </div>
+          <em>PRINCIPAL</em>
+        </article>
+        <button class="add-card" type="button" id="add-card-2">
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+          <b>Agregar método de pago</b>
+          <small>Crédito o débito</small>
+        </button>
+      </div>
+
+      <div class="secure-note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg>
+        <div>
+          <b>Tus pagos están protegidos</b>
+          <p>Nunca almacenamos el número completo de tus tarjetas.</p>
+        </div>
+      </div>
+
+      <section class="section-head">
+        <div>
+          <span class="overline">ACTIVIDAD RECIENTE</span>
+          <h2>Movimientos</h2>
+        </div>
+      </section>
+
+      <div class="transaction-list">
+        <article>
+          <span class="transaction-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg></span>
+          <div><b>Alquiler · Mazda CX-30</b><p>15 mayo 2025 · Visa •••• 4242</p></div>
+          <strong>-$742.000</strong>
+        </article>
+        <article>
+          <span class="transaction-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></span>
+          <div><b>Reembolso de depósito</b><p>15 mayo 2025 · Visa •••• 4242</p></div>
+          <strong class="positive">+$180.000</strong>
+        </article>
+        <article>
+          <span class="transaction-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg></span>
+          <div><b>Alquiler · Chevrolet Onix</b><p>26 abril 2025 · Visa •••• 4242</p></div>
+          <strong>-$336.000</strong>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="index.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v11h14V10M9 21v-7h6v7"></path></svg><small>Inicio</small></a>
+    <a href="explorar.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><small>Explorar</small></a>
+    <a href="viajes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg><small>Mis viajes</small></a>
+    <a href="billetera.html" class="active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h15v14H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13"></path><path d="M15 10h6v5h-6a2.5 2.5 0 0 1 0-5Z"></path></svg><small>Billetera</small></a>
+    <a href="perfil.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"></path></svg><small>Mi perfil</small></a>
+  </nav>
+</div>
+
+<div id="toast-root"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
