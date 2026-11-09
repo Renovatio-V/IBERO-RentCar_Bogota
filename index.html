@@ -3,186 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RENTCAR · Inicio</title>
-  <meta name="description" content="Alquiler de carros en Bogotá con entrega a domicilio.">
+  <title>RENTCAR · Inicia sesión</title>
+  <meta name="description" content="Inicia sesión en RENTCAR Bogotá.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="app">
-  <aside class="sidebar">
+<main class="login">
+  <section class="login-visual" style="background-image: linear-gradient(rgba(18, 18, 17, 0.1), rgba(18, 18, 17, 0.88)), url('assets/img/login-hero.jpg');">
     <div class="brand"><span>R</span><div>RENTCAR<small>BOGOTÁ</small></div></div>
-    <nav>
-      <a href="index.html" class="active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v11h14V10M9 21v-7h6v7"></path></svg><span>Inicio</span></a>
-      <a href="explorar.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><span>Explorar</span></a>
-      <a href="viajes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg><span>Mis viajes</span></a>
-      <a href="billetera.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h15v14H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13"></path><path d="M15 10h6v5h-6a2.5 2.5 0 0 1 0-5Z"></path></svg><span>Billetera</span></a>
-      <a href="perfil.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"></path></svg><span>Mi perfil</span></a>
-    </nav>
-    <div class="sidebar-help">
-      <span>24/7</span>
-      <b>¿Necesitas ayuda?</b>
-      <small>Estamos contigo en la vía.</small>
-      <button type="button">Contactar soporte</button>
+    <div class="login-message">
+      <span class="overline">TU CIUDAD. TU RUTA.</span>
+      <h1>Muévete<br>a tu manera.</h1>
+      <p>Encuentra el carro perfecto y recíbelo donde estés.</p>
     </div>
-    <a class="side-profile" href="perfil.html">
-      <div class="avatar">CT</div>
-      <div><b>Camila Torres</b><small>Conductora Oro</small></div>
-      <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
-    </a>
-  </aside>
+    <p class="photo-credit">Bogotá, Colombia</p>
+  </section>
 
-  <main class="main">
-    <header class="topbar">
-      <div class="mobile-brand"><div class="brand"><span>R</span><div>RENTCAR<small>BOGOTÁ</small></div></div></div>
-      <div class="crumb">RENTCAR <span>/ INICIO</span></div>
-      <div class="top-actions">
-        <button class="icon-button" type="button" aria-label="Notificaciones"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg><i></i></button>
-        <a class="mini-profile" href="perfil.html"><span class="avatar">CT</span><b>Camila</b><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
-      </div>
-    </header>
-
-    <div class="content">
-      <section class="hero">
-        <div class="hero-copy">
-          <span class="overline dark-text">MOVILIDAD SIN LÍMITES</span>
-          <h1>¿A dónde<br>vamos hoy?</h1>
-          <p>El carro ideal, entregado en la puerta de tu casa.</p>
+  <section class="login-panel">
+    <div class="login-box">
+      <div class="login-mobile-brand"><div class="brand"><span>R</span><div>RENTCAR<small>BOGOTÁ</small></div></div></div>
+      <span class="overline">BIENVENIDA DE NUEVO</span>
+      <h2>Inicia sesión</h2>
+      <p class="muted">Tu próximo viaje está a unos clics.</p>
+      <form id="login-form">
+        <label>Correo electrónico<input type="email" value="camila@email.com" required></label>
+        <label>Contraseña<input type="password" value="rentcar2025" required></label>
+        <div class="between">
+          <label class="checkbox"><input type="checkbox" checked> Recordarme</label>
+          <button class="link" type="button">¿Olvidaste tu contraseña?</button>
         </div>
-        <div class="hero-art">
-          <span>BOG</span>
-          <img alt="Renault Duster disponible" src="assets/img/renault-duster.jpg">
-        </div>
-      </section>
-
-      <div class="search-panel">
-        <div class="location-field">
-          <span class="field-label">ENTREGA Y DEVOLUCIÓN</span>
-          <div>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-            <input value="Chapinero, Bogotá">
-          </div>
-          <button class="location-button" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="6" r="2"></circle><path d="M8 18h3c5 0 1-12 5-12"></path></svg> Usar ubicación actual</button>
-        </div>
-        <label>
-          <span class="field-label">DESDE</span>
-          <div class="date-field">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
-            <input type="datetime-local" value="2025-06-06T10:00">
-          </div>
-        </label>
-        <label>
-          <span class="field-label">HASTA</span>
-          <div class="date-field">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
-            <input type="datetime-local" value="2025-06-09T10:00">
-          </div>
-        </label>
-        <a class="primary search-button" href="explorar.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg> Buscar carros</a>
-      </div>
-
-      <section class="section-head">
-        <div>
-          <span class="overline">RECOMENDADOS PARA TI</span>
-          <h2>Listos para rodar</h2>
-        </div>
-        <a class="text-button" href="explorar.html">Ver todos <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></a>
-      </section>
-
-      <div class="car-grid home-cars">
-        <article class="car-card" data-car="duster" data-type="SUV" data-brand="Renault" data-color="Gris">
-          <div class="car-image">
-            <img alt="Renault Duster" src="assets/img/renault-duster.jpg">
-            <span class="available"><i></i> Disponible</span>
-            <button class="favorite" type="button" aria-label="Guardar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg></button>
-          </div>
-          <div class="car-content">
-            <div class="car-title">
-              <div><span class="overline">SUV</span><h3>Renault Duster</h3></div>
-              <div class="rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg>4.9<small>(64)</small></div>
-            </div>
-            <div class="spec-row">
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6M16 5c2 0 3 1.5 3 3s-1 3-3 3M17 14c2.5.5 3.7 2.5 4 6"></path></svg>5</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>Automático</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"></path><path d="m12 14 4-4M7 17h10"></path></svg>Ilimitados</span>
-            </div>
-            <div class="car-footer">
-              <div><strong>$185.000</strong><span>/ día</span></div>
-              <button class="circle-button" type="button" aria-label="Ver vehículo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="car-card" data-car="cx30" data-type="SUV" data-brand="Mazda" data-color="Plata">
-          <div class="car-image">
-            <img alt="Mazda CX-30" src="assets/img/mazda-cx30.jpg">
-            <span class="available"><i></i> Disponible</span>
-            <button class="favorite" type="button" aria-label="Guardar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg></button>
-          </div>
-          <div class="car-content">
-            <div class="car-title">
-              <div><span class="overline">SUV</span><h3>Mazda CX-30</h3></div>
-              <div class="rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg>4.8<small>(47)</small></div>
-            </div>
-            <div class="spec-row">
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6M16 5c2 0 3 1.5 3 3s-1 3-3 3M17 14c2.5.5 3.7 2.5 4 6"></path></svg>5</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>Automático</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"></path><path d="m12 14 4-4M7 17h10"></path></svg>250 km/día</span>
-            </div>
-            <div class="car-footer">
-              <div><strong>$230.000</strong><span>/ día</span></div>
-              <button class="circle-button" type="button" aria-label="Ver vehículo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="car-card" data-car="onix" data-type="Compacto" data-brand="Chevrolet" data-color="Negro">
-          <div class="car-image">
-            <img alt="Chevrolet Onix" src="assets/img/chevrolet-onix.jpg">
-            <span class="available"><i></i> Disponible</span>
-            <button class="favorite" type="button" aria-label="Guardar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg></button>
-          </div>
-          <div class="car-content">
-            <div class="car-title">
-              <div><span class="overline">Compacto</span><h3>Chevrolet Onix</h3></div>
-              <div class="rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg>4.7<small>(81)</small></div>
-            </div>
-            <div class="spec-row">
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6M16 5c2 0 3 1.5 3 3s-1 3-3 3M17 14c2.5.5 3.7 2.5 4 6"></path></svg>5</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>Mecánico</span>
-              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"></path><path d="m12 14 4-4M7 17h10"></path></svg>200 km/día</span>
-            </div>
-            <div class="car-footer">
-              <div><strong>$145.000</strong><span>/ día</span></div>
-              <button class="circle-button" type="button" aria-label="Ver vehículo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></button>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <a class="active-trip" href="viajes.html">
-        <div class="trip-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="6" r="2"></circle><path d="M8 18h3c5 0 1-12 5-12"></path></svg></div>
-        <div>
-          <span class="overline">PRÓXIMO VIAJE</span>
-          <h3>Tu Duster te espera</h3>
-          <p>Viernes, 6 jun. · Entrega en tu ubicación</p>
-        </div>
-        <div class="trip-date"><strong>06</strong><span>JUN</span></div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
-      </a>
+        <button class="primary wide" type="submit">Ingresar <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14 0m-5-5 5 5-5 5"></path></svg></button>
+      </form>
+      <p class="login-foot">¿Aún no tienes cuenta? <button class="link" type="button">Crear cuenta</button></p>
     </div>
-  </main>
+  </section>
+</main>
 
-  <nav class="mobile-nav">
-    <a href="index.html" class="active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v11h14V10M9 21v-7h6v7"></path></svg><small>Inicio</small></a>
-    <a href="explorar.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><small>Explorar</small></a>
-    <a href="viajes.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Z"></path><path d="M7 7l1-3h8l1 3M7 17v3M17 17v3M4 12h16"></path></svg><small>Mis viajes</small></a>
-    <a href="billetera.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h15v14H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h13"></path><path d="M15 10h6v5h-6a2.5 2.5 0 0 1 0-5Z"></path></svg><small>Billetera</small></a>
-    <a href="perfil.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"></path></svg><small>Mi perfil</small></a>
-  </nav>
-</div>
-
-<div id="modal-root"></div>
-<div id="toast-root"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

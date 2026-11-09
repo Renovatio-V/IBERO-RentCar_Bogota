@@ -168,7 +168,7 @@
   if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      window.location.href = 'index.html';
+      window.location.href = 'dashboard.html';
     });
   }
 })();
