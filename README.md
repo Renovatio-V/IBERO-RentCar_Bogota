@@ -18,13 +18,7 @@ Este proyecto es un prototipo de interfaz: las reservas, el inicio de sesión y 
 
 ## Cómo verlo localmente
 
-Clona el repositorio y abre `index.html` en un navegador para ver el inicio de sesión. Al ingresar, se muestra el dashboard. También puedes iniciar un servidor web local desde la carpeta del proyecto:
-
-```bash
-python -m http.server 8000
-```
-
-Luego visita <http://localhost:8000>.
+Clona el repositorio y abre `index.html` en un navegador para ver el inicio de sesión. 
 
 ## Tecnologías
 
